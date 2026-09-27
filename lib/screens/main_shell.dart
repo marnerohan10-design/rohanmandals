@@ -42,7 +42,10 @@ class _MainShellState extends State<MainShell> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ROHAN\'S MANDALA', style: TextStyle(fontWeight: FontWeight.w700, letterSpacing: 1.2)),
+        title: const Text(
+          'ROHAN\'S MANDALA',
+          style: TextStyle(fontWeight: FontWeight.w700, letterSpacing: 1.2),
+        ),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           IconButton(
@@ -62,38 +65,76 @@ class _MainShellState extends State<MainShell> {
           IconButton(onPressed: () {}, icon: const Icon(Icons.person_outline)),
         ],
       ),
-      body: isProductSelected
-          ? ProductDetailScreen(product: _selectedProduct!)
-          : switch (_selectedIndex) {
-              0 => HomeScreen(
-                  onOpenShop: () => setState(() => _selectedIndex = 1),
-                  onOpenCustom: () => setState(() => _selectedIndex = 3),
-                  onOpenProduct: (product) => setState(() => _selectedProduct = product),
-                ),
-              1 => ShopScreen(
-                  onOpenProduct: (product) => setState(() => _selectedProduct = product),
-                ),
-              2 => const CollectionsScreen(),
-              3 => const CustomArtScreen(),
-              4 => const AboutScreen(),
-              5 => const GalleryScreen(),
-              6 => const ContactScreen(),
-              8 => WishlistScreen(onOpenProduct: (product) => setState(() => _selectedProduct = product)),
-              9 => const CartScreen(),
-              10 => const CheckoutScreen(),
-              _ => const Center(child: Text('Page coming soon')),
-            },
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 350),
+        switchInCurve: Curves.easeOutCubic,
+        switchOutCurve: Curves.easeInCubic,
+        transitionBuilder:
+            (child, animation) => FadeTransition(
+              opacity: animation,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(0.02, 0),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              ),
+            ),
+        child:
+            isProductSelected
+                ? ProductDetailScreen(
+                  key: ValueKey(_selectedProduct!.id),
+                  product: _selectedProduct!,
+                )
+                : switch (_selectedIndex) {
+                  0 => HomeScreen(
+                    key: const ValueKey('home'),
+                    onOpenShop: () => setState(() => _selectedIndex = 1),
+                    onOpenCustom: () => setState(() => _selectedIndex = 3),
+                    onOpenProduct:
+                        (product) => setState(() => _selectedProduct = product),
+                  ),
+                  1 => ShopScreen(
+                    key: const ValueKey('shop'),
+                    onOpenProduct:
+                        (product) => setState(() => _selectedProduct = product),
+                  ),
+                  2 => const CollectionsScreen(key: ValueKey('collections')),
+                  3 => const CustomArtScreen(key: ValueKey('custom-art')),
+                  4 => const AboutScreen(key: ValueKey('about')),
+                  5 => const GalleryScreen(key: ValueKey('gallery')),
+                  6 => const ContactScreen(key: ValueKey('contact')),
+                  8 => WishlistScreen(
+                    key: const ValueKey('wishlist'),
+                    onOpenProduct:
+                        (product) => setState(() => _selectedProduct = product),
+                  ),
+                  9 => const CartScreen(key: ValueKey('cart')),
+                  10 => const CheckoutScreen(key: ValueKey('checkout')),
+                  _ => const Center(
+                    key: ValueKey('coming-soon'),
+                    child: Text('Page coming soon'),
+                  ),
+                },
+      ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedIndex >= 0 && _selectedIndex <= 6 ? _selectedIndex : 0,
+        selectedIndex:
+            _selectedIndex >= 0 && _selectedIndex <= 6 ? _selectedIndex : 0,
         onDestinationSelected: (index) {
           setState(() {
             _selectedIndex = index;
             _selectedProduct = null;
           });
         },
-        destinations: _navItems
-            .map((item) => NavigationDestination(label: item.label, icon: Icon(item.icon)))
-            .toList(),
+        destinations:
+            _navItems
+                .map(
+                  (item) => NavigationDestination(
+                    label: item.label,
+                    icon: Icon(item.icon),
+                  ),
+                )
+                .toList(),
       ),
       floatingActionButton: const SizedBox.shrink(),
     );

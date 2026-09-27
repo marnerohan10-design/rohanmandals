@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color offWhite = Color(0xFFF7F4EC);
-  static const Color plum = Color(0xFF172724);
-  static const Color rust = Color(0xFFB96746);
-  static const Color gold = Color(0xFFD39A4A);
-  static const Color parchment = Color(0xFFE6E9DE);
-  static const Color charcoal = Color(0xFF26312E);
-  static const Color mutedText = Color(0xFF68716D);
-  static const Color line = Color(0xFFDDE1D8);
+  static const Color offWhite = Color(0xFFF4F7F8);
+  static const Color plum = Color(0xFF102A43);
+  static const Color rust = Color(0xFFD66D58);
+  static const Color gold = Color(0xFFE0A458);
+  static const Color parchment = Color(0xFFDCE9E7);
+  static const Color charcoal = Color(0xFF243B53);
+  static const Color mutedText = Color(0xFF627D98);
+  static const Color line = Color(0xFFD9E2EC);
 
   static ThemeData lightTheme() {
     final base = ThemeData(
