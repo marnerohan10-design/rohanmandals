@@ -2,72 +2,107 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color offWhite = Color(0xFFFAF7F2);
-  static const Color plum = Color(0xFF3B1F2B);
-  static const Color rust = Color(0xFF8C5A4A);
-  static const Color gold = Color(0xFFC9A227);
-  static const Color parchment = Color(0xFFE8DCC8);
-  static const Color charcoal = Color(0xFF2A2421);
-  static const Color mutedText = Color(0xFF5E514C);
+  static const Color offWhite = Color(0xFFF7F4EC);
+  static const Color plum = Color(0xFF172724);
+  static const Color rust = Color(0xFFB96746);
+  static const Color gold = Color(0xFFD39A4A);
+  static const Color parchment = Color(0xFFE6E9DE);
+  static const Color charcoal = Color(0xFF26312E);
+  static const Color mutedText = Color(0xFF68716D);
+  static const Color line = Color(0xFFDDE1D8);
 
   static ThemeData lightTheme() {
     final base = ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: offWhite,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: plum,
+        seedColor: rust,
         brightness: Brightness.light,
         primary: plum,
         secondary: rust,
         tertiary: gold,
-        surface: Colors.white,
+        surface: offWhite,
       ),
-      textTheme: GoogleFonts.interTextTheme().copyWith(
-        headlineLarge: GoogleFonts.playfairDisplay(
+      textTheme: GoogleFonts.dmSansTextTheme().copyWith(
+        headlineLarge: GoogleFonts.cormorantGaramond(
           fontWeight: FontWeight.w700,
           color: plum,
         ),
-        headlineMedium: GoogleFonts.playfairDisplay(
+        headlineMedium: GoogleFonts.cormorantGaramond(
           fontWeight: FontWeight.w700,
           color: plum,
         ),
-        headlineSmall: GoogleFonts.playfairDisplay(
+        headlineSmall: GoogleFonts.cormorantGaramond(
           fontWeight: FontWeight.w700,
           color: plum,
         ),
-        titleLarge: GoogleFonts.playfairDisplay(
+        titleLarge: GoogleFonts.cormorantGaramond(
           fontWeight: FontWeight.w600,
           color: plum,
         ),
-        bodyLarge: GoogleFonts.inter(color: charcoal),
-        bodyMedium: GoogleFonts.inter(color: charcoal),
-        bodySmall: GoogleFonts.inter(color: mutedText),
+        bodyLarge: GoogleFonts.dmSans(color: charcoal),
+        bodyMedium: GoogleFonts.dmSans(color: charcoal),
+        bodySmall: GoogleFonts.dmSans(color: mutedText),
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: offWhite,
         foregroundColor: plum,
         elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        centerTitle: false,
       ),
       cardTheme: CardThemeData(
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(22),
-        ),
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         color: Colors.white,
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: Colors.white,
+        indicatorColor: parchment,
+        elevation: 8,
+        labelTextStyle: WidgetStatePropertyAll(
+          TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: plum),
+        ),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: plum,
+          foregroundColor: Colors.white,
+          minimumSize: const Size(0, 48),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: plum,
+          minimumSize: const Size(0, 48),
+          side: const BorderSide(color: line),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 16,
+        ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: Color(0xFFEEE4D8)),
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: line),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: Color(0xFFEEE4D8)),
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: line),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: plum, width: 1.5),
         ),
       ),

@@ -1,0 +1,36 @@
+class ArtAssetCatalog {
+  const ArtAssetCatalog._();
+
+  static const List<String> all = [
+    'assets/images/mandala_01.svg',
+    'assets/images/mandala_02.svg',
+    'assets/images/mandala_03.svg',
+    'assets/images/mandala_04.svg',
+    'assets/images/mandala_05.svg',
+    'assets/images/mandala_06.svg',
+    'assets/images/mandala_07.svg',
+    'assets/images/mandala_08.svg',
+    'assets/images/mandala_09.svg',
+    'assets/images/mandala_10.svg',
+    'assets/images/mandala_11.svg',
+    'assets/images/mandala_12.svg',
+    'assets/images/mandala_13.svg',
+    'assets/images/mandala_14.svg',
+    'assets/images/mandala_15.svg',
+    'assets/images/mandala_16.svg',
+    'assets/images/mandala_17.svg',
+    'assets/images/mandala_18.svg',
+    'assets/images/mandala_19.svg',
+    'assets/images/mandala_20.svg',
+    'assets/images/mandala_21.svg',
+    'assets/images/mandala_22.svg',
+    'assets/images/mandala_23.svg',
+    'assets/images/mandala_24.svg',
+    'assets/images/mandala_25.svg',
+    'assets/images/mandala_26.svg',
+    'assets/images/mandala_27.svg',
+    'assets/images/mandala_28.svg',
+    'assets/images/mandala_29.svg',
+    'assets/images/mandala_30.svg',
+  ];
+}

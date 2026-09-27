@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:rohanmandalas/models/product.dart';
 import 'package:rohanmandalas/providers/store_provider.dart';
 import 'package:rohanmandalas/theme/app_theme.dart';
+import 'package:rohanmandalas/widgets/art_image.dart';
 
 class HomeScreen extends StatelessWidget {
   final VoidCallback onOpenShop;
@@ -320,8 +321,8 @@ class ProductCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-              child: Image.network(
-                product.images.first,
+              child: ArtImage(
+                source: product.images.first,
                 height: 220,
                 width: double.infinity,
                 fit: BoxFit.cover,
