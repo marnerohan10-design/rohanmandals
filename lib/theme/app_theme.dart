@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color offWhite = Color(0xFFFFFFFF);
-  static const Color plum = Color(0xFF1B2925);
-  static const Color rust = Color(0xFFFFC107);
-  static const Color gold = Color(0xFFFFB300);
-  static const Color parchment = Color(0xFFE7F5F1);
-  static const Color charcoal = Color(0xFF1B2925);
-  static const Color mutedText = Color(0xFF6A7773);
-  static const Color line = Color(0xFFDCE9E5);
+  static const Color offWhite = Color(0xFFF4F7F8);
+  static const Color plum = Color(0xFF102A43);
+  static const Color rust = Color(0xFFD66D58);
+  static const Color gold = Color(0xFFE0A458);
+  static const Color parchment = Color(0xFFDCE9E7);
+  static const Color charcoal = Color(0xFF243B53);
+  static const Color mutedText = Color(0xFF627D98);
+  static const Color line = Color(0xFFD9E2EC);
 
   static ThemeData lightTheme() {
     final base = ThemeData(
@@ -46,7 +46,7 @@ class AppTheme {
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: offWhite,
-        foregroundColor: charcoal,
+        foregroundColor: plum,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         centerTitle: false,
@@ -62,13 +62,13 @@ class AppTheme {
         indicatorColor: parchment,
         elevation: 8,
         labelTextStyle: WidgetStatePropertyAll(
-          TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: charcoal),
+          TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: plum),
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
-          backgroundColor: rust,
-          foregroundColor: plum,
+          backgroundColor: plum,
+          foregroundColor: Colors.white,
           minimumSize: const Size(0, 48),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
@@ -78,7 +78,7 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: rust,
+          foregroundColor: plum,
           minimumSize: const Size(0, 48),
           side: const BorderSide(color: line),
           shape: RoundedRectangleBorder(
