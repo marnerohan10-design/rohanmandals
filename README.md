@@ -30,8 +30,8 @@ A responsive React + Vite storefront and Express admin API for a small mandala a
 6. Open `http://localhost:5173`. Admin is at `http://localhost:5173/admin`.
 
 ### Initial admin login
-- Username: `admin`
-- Password: `Mandala@123`
+- Username: `marnerohan10@gmail.com`
+- Password: `Rohan@6728`
 
 **Change the initial password immediately** in Admin → Settings. The password is stored as a bcrypt hash.
 
