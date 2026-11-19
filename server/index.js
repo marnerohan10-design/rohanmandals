@@ -16,7 +16,7 @@ const dataDir=path.join(__dirname,'data'),uploadDir=path.join(__dirname,'uploads
 fs.mkdirSync(dataDir,{recursive:true});fs.mkdirSync(uploadDir,{recursive:true})
 const dbFile=path.join(dataDir,'store.json')
 const seed={artworks:[
-{id:'a1',title:'The Quiet Bloom',category:'Floral',price:2400,description:'A delicate study of balance, patience and the beauty of small beginnings.',size:'A4 · Original artwork',image:'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900&q=85',featured:true},
+{id:'a1',title:'The Quiet Bloom',category:'Floral',price:2400,description:'A delicate study of balance, patience and the beauty of small beginnings.',size:'A4 · Original artwork',image:'/mandala-hero.jpeg',featured:true},
 {id:'a2',title:'Celestial Rhythm',category:'Geometric',price:3200,description:'Repeating forms inspired by the quiet rhythm of the cosmos.',size:'12 × 12 in · Original artwork',image:'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=900&q=85',featured:true},
 {id:'a3',title:'A Moment of Stillness',category:'Traditional',price:1800,description:'A meditative composition made one careful dot at a time.',size:'A5 · Original artwork',image:'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=900&q=85'},
 {id:'a4',title:'Sun Within',category:'Floral',price:2800,description:'Warm, intricate petals radiating outward from a central point.',size:'10 × 10 in · Original artwork',image:'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=900&q=85'},
